@@ -1,0 +1,226 @@
+1) Class - Movie
+The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+title, which is a String representing the title of the movie
+studio, which is a String representing the studio that made the movie
+rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+
+a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Movie{
+            constructor(title,studio,rating)
+            {
+                this.title=title,
+                this.studio=studio,
+                this.rating=rating;
+            }
+}
+var m2=new Movie("Ms Dhoni","Fox Star Studios","PG56");
+console.log(m2);
+
+ </script>
+</body>
+</html>
+
+
+b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Movie{
+           
+            constructor(title,studio,rating)
+            {
+                this.title=title;
+                this.studio=studio;
+                if(rating==null)
+                {
+                this.rating="PG";
+                }else{
+                    this.rating=rating;
+
+                }
+            }
+           }
+
+var m1=new Movie("Ms Dhoni","Fox Star Studios");
+console.log(m1)
+
+var m4=new Movie("ABCD2","RStudio");
+console.log(m4);
+
+</script>
+</body>
+</html>
+
+
+c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Movie{
+
+            constructor(title,studio,rating)
+            {
+                this.title=title;
+                this.studio=studio;
+                if(rating==null)
+                {
+                this.rating="PG";
+                }else{
+                    this.rating=rating;
+
+                }
+            }
+            getPg(array){
+                console.log("Inside method getPg");
+                var res=[];
+            for(var i=0;i<array.length;i++) {
+                if(array[i].rating==="PG") {
+                    //console.log(array[i]);
+                    res.push(array[i]);
+                } 
+            }
+            //console.log(res)
+            return res;
+            
+            }
+           
+        }
+        var m1=new Movie("Ms Dhoni","Fox Star Studios");
+        console.log(m1)
+        var m2=new Movie("Ms Dhoni","Fox Star Studios","PG56");
+        console.log(m2);
+        var m4=new Movie("ABCD2","RStudio");
+        var m5=new Movie("ABCD","Rstudio");
+        var arr=[m1,m2,m4,m5];
+        m1.getPg(arr);
+       console.log(m2.getPg(arr));
+
+    </script>
+</body>
+</html>
+
+
+d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Movie{
+            constructor(title,studio,rating)
+            {
+                this.title=title,
+                this.studio=studio,
+                this.rating=rating;
+            }
+}
+ var m3=new Movie("Casino Rayale"," Eon Production","PG13");
+ console.log(m3);
+
+ </script>
+</body>
+</html>
+
+
+2) Write a “person” class to hold all the details
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age,dob,height,weight)
+            {
+                this.name=name,
+                this.age=age,
+                this.dob=dob,
+                this.height=height,
+                this.weight=weight
+                
+            }
+        }
+        var p1=new Person("Sam",23,"10/05/1999",1.57,60);
+        console.log(p1)
+        var p2=new Person("Harry",24,"14/03/1998",1.50,58);
+        console.log(p2);
+    </script>
+</body>
+</html>
+
+
+3) write a class to calculate the uber price.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Price{
+            constructor(cost,distancekm)
+            {
+                this.cost=cost;
+                this.distancekm=distancekm;
+                
+            }
+            getCost()
+            {
+                this.p= this.cost*this.distancekm;
+                 return `The cost is ${this.p}`;
+            }
+            getDiscnt(num)
+            {
+                this.num=num;
+            return (this.p)-this.p*(this.num/100)
+        }
+
+        }
+        var p1= new Price(30,2);
+        console.log(p1.getCost());
+        console.log(p1.getDiscnt(25))
+    </script>
+</body>
+</html>
